@@ -21,6 +21,7 @@
             $this->RegisterPropertyString("Host", "");
             $this->RegisterPropertyBoolean("Open", false);
             $this->RegisterPropertyInteger("Port", 9090);
+            
  
         }
  
