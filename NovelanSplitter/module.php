@@ -57,6 +57,7 @@
                 if ($change)
                 {
                     @IPS_ApplyChanges($ParentID);
+                    
                 }
             }
         }
