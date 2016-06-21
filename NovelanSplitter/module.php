@@ -22,6 +22,9 @@
         public function ApplyChanges() {
             // Diese Zeile nicht löschen
             parent::ApplyChanges();
+            
+            //Always create our own VirtualIO, when no parent is already available
+            $this->RequireParent("{82347F20-F541-41E1-AC5B-A636FD3AE2D8}");
         }
  
         /**
