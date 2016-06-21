@@ -15,6 +15,12 @@
         public function Create() {
             // Diese Zeile nicht löschen.
             parent::Create();
+            
+            //Always create our own Client Server, when no parent is already available
+            $this->RequireParent("{3CFF0FD9-E306-41DB-9B5A-9D06D38576C3}", "Novelan Client");
+            $this->RegisterPropertyString("Host", "");
+            $this->RegisterPropertyBoolean("Open", false);
+            $this->RegisterPropertyInteger("Port", 9090);
  
         }
  
@@ -23,8 +29,7 @@
             // Diese Zeile nicht löschen
             parent::ApplyChanges();
             
-            //Always create our own VirtualIO, when no parent is already available
-            $this->RequireParent("{82347F20-F541-41E1-AC5B-A636FD3AE2D8}");
+
         }
  
         /**
