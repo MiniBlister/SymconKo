@@ -22,6 +22,9 @@
         public function ApplyChanges() {
             // Diese Zeile nicht löschen
             parent::ApplyChanges();
+
+            //Always create our own Splitter, when no parent is already available
+            $this->RequireParent("{C5A51178-2760-49DA-9175-1ED71975753C}");
         }
  
         /**
