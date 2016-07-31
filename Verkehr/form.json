@@ -1,0 +1,23 @@
+{
+    "elements":
+    [
+        { "type": "Label", "label": "Dates for recycling:" },
+        { "type": "ValidationTextBox", "name": "Google", "caption": "Google Key" },
+        { "type": "Label", "label": "--------------------------------------------------------------------------------------------------------------------------------------------------------" },
+        { "type": "Label", "label": "Die Nachfolgende Adressangaben muessen in  folgedem Format sein: Ort,Strasse+NR (z.b.: Garching,Parkring+25 ) "},
+        { "type": "ValidationTextBox", "name": "Heimatort", "caption": "Heimatort" },
+        { "type": "ValidationTextBox", "name": "Ziel1", "caption": "Ziel 1" },
+        { "type": "ValidationTextBox", "name": "Ziel2", "caption": "Ziel 2" },
+        { "type": "ValidationTextBox", "name": "Ziel3", "caption": "Ziel 3" }
+
+
+    ],
+    "actions":
+    [
+        
+    ],
+    "status":
+    [
+        
+    ]
+}

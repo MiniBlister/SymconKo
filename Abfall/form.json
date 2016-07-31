@@ -1,0 +1,19 @@
+{
+    "elements":
+    [
+        { "type": "Label", "label": "Dates for recycling:" },
+        { "type": "ValidationTextBox", "name": "BioTonne", "caption": "Bio Tonne" },
+        { "type": "ValidationTextBox", "name": "RestmuellTonne", "caption": "Restmüll Tonne" },
+        { "type": "ValidationTextBox", "name": "GelberSack", "caption": "Gelber Sack" },
+        { "type": "ValidationTextBox", "name": "PapierTonne", "caption": "Papier Tonne" }
+        
+    ],
+    "actions":
+    [
+        
+    ],
+    "status":
+    [
+        
+    ]
+}
