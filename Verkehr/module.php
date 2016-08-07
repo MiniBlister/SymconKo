@@ -24,6 +24,7 @@
             
             $this->RegisterVariableString("KoStauHTML", "Staumeldungen HTML", "~HTMLBox", 0);
             $this->RegisterTimer("Update", 30000, 'Verk_GetVerkehr($_IPS[\'TARGET\']);');
+            
                     
         }
         
