@@ -36,6 +36,15 @@
             // Diese Zeile nicht löschen
             parent::ApplyChanges();
             
+            if (($this->ReadPropertyString("Google") != "") && ($this->ReadPropertyString("Heimatort") != "") && ($this->ReadPropertyString("Ziel1") != "" || $this->ReadPropertyString("Ziel2") != "" || $this->ReadPropertyString("Ziel3") != "")){
+              
+              //Instanz ist aktiv
+              $this->SetStatus(102);
+            } else {
+              //Instanz ist inaktiv
+              $this->SetStatus(104);
+            }
+            
 
                       
         }
