@@ -1,17 +1,16 @@
 {
     "elements":
     [
-        { "type": "Label", "label": "Dates for recycling:" },
         { "type": "ValidationTextBox", "name": "Google", "caption": "Google Key" },
         { "type": "Label", "label": "--------------------------------------------------------------------------------------------------------------------------------------------------------" },
-        { "type": "Label", "label": "Die Nachfolgende Adressangaben muessen in  folgedem Format sein: Ort,Strasse+NR (z.b.: Garching,Parkring+25 ) "},
+        
         { "type": "ValidationTextBox", "name": "Heimatort", "caption": "Heimatort" },
-        { "type": "ValidationTextBox", "name": "Ziel1", "caption": "Ziel 1" },
-        { "type": "ValidationTextBox", "name": "Ziel2", "caption": "Ziel 2" },
-        { "type": "ValidationTextBox", "name": "Ziel3", "caption": "Ziel 3" },
-        { "type": "CheckBox", "name": "HinUndZureuck", "caption": "Hin und Zurueck" }
-
-
+        { "type": "ValidationTextBox", "name": "Ziel1", "caption": "1. Ziel" },
+        { "type": "ValidationTextBox", "name": "Ziel2", "caption": "2. Ziel" },
+        { "type": "ValidationTextBox", "name": "Ziel3", "caption": "3. Ziel" },
+        { "type": "Label", "label": "Die Nachfolgende Adressangaben muessen in  folgedem Format sein: Ort,Strasse+NR (z.b.: Garching,Parkring+25 ) "},
+        { "type": "Label", "label": "--------------------------------------------------------------------------------------------------------------------------------------------------------" },
+        { "type": "CheckBox", "name": "HinUndZureuck", "caption": "Hin und Rueckfahrt berechnen" }
     ],
     "actions":
     [
@@ -19,6 +18,9 @@
     ],
     "status":
     [
+        { "code": 101, "icon": "active", "caption": "Instance getting created!" },
+        { "code": 102, "icon": "active", "caption": "Instance is active!" },
+        { "code": 104, "icon": "inactive", "caption": "Instance is inactive!" }
         
     ]
 }
