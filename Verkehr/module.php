@@ -60,28 +60,37 @@
         public function GetVerkehr() {
             // Selbsterstellter Code
           
-                  
-          $ziel[0] = $this->ReadPropertyString("Ziel1");
-          $ziel[1] = $this->ReadPropertyString("Ziel2");
-          $ziel[2] = $this->ReadPropertyString("Ziel3");
+          $ziel[0]  = $this->ReadPropertyString("Ziel1");
+          $ziel[1]  = $this->ReadPropertyString("Ziel2");
+          $ziel[2]  = $this->ReadPropertyString("Ziel3");
           $start[0] = $this->ReadPropertyString("Heimatort");
-          $google = $this->ReadPropertyString("Google");
+          $google   = $this->ReadPropertyString("Google");
+          $duration = array();
+          
           foreach ($ziel as $key => $value) {
-
             $url = "https://maps.googleapis.com/maps/api/distancematrix/json?origins=".$start[0]."&destinations=".$value."&mode=driving&language=de-DE&departure_time=now&key=".$google;
             $key = file_get_contents($url);
+            
             if ($key != FALSE ) {
               $result = json_decode($key, true);
-              if ($result["rows"]["0"]["elements"]["0"]["status"] == "OK") {
-                $duration[$key]['aktuell'] = $result["rows"]["0"]["elements"]["0"]["duration"]["value"];
-                $duration[$key]['traffic'] = $result["rows"]["0"]["elements"]["0"]["duration_in_traffic"]["value"];
-                $city = explode(",",$value);
-                $duration[$key]['startcity'] = $city[0];
+              //Prüfen ob die Antwort OK, bei zu vielen Anfragen an den Server gibt es ein Fehler
+              if ($result['status'] === 'OK') {
+                if ($result["rows"]["0"]["elements"]["0"]["status"] === "OK") {
+                  $duration[$key]['aktuell'] = $result["rows"]["0"]["elements"]["0"]["duration"]["value"];
+                  $duration[$key]['traffic'] = $result["rows"]["0"]["elements"]["0"]["duration_in_traffic"]["value"];
+                  $city = explode(",",$value);
+                  $duration[$key]['startcity'] = $city[0];
+                }
+                else {
+                  $duration[$key]['aktuell'] = 0;
+                  $duration[$key]['traffic'] = 0;
+                  $duration[$key]['startcity'] = $result["rows"]["0"]["elements"]["0"]["status"];
+                }
               }
               else {
-                $duration[$key]['aktuell'] = 0;
-                $duration[$key]['traffic'] = 0;
-                $duration[$key]['startcity'] = $result["rows"]["0"]["elements"]["0"]["status"];
+                $duration[0]['aktuell'] = 0;
+                $duration[0]['traffic'] = 0;
+                $duration[0]['startcity'] = $result["status"];
               }
             }
             else {
