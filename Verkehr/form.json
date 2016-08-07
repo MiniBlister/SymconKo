@@ -8,7 +8,8 @@
         { "type": "ValidationTextBox", "name": "Heimatort", "caption": "Heimatort" },
         { "type": "ValidationTextBox", "name": "Ziel1", "caption": "Ziel 1" },
         { "type": "ValidationTextBox", "name": "Ziel2", "caption": "Ziel 2" },
-        { "type": "ValidationTextBox", "name": "Ziel3", "caption": "Ziel 3" }
+        { "type": "ValidationTextBox", "name": "Ziel3", "caption": "Ziel 3" },
+        { "type": "CheckBox", "name": "HinUndZureuck", "caption": "Hin und Zurueck" }
 
 
     ],
